@@ -1,0 +1,40 @@
+{
+  "name":             "evanlovely/plugin-twig-namespaces",
+  "description":      "Twig Namespaces for Pattern Lab",
+  "keywords":         ["twig", "pattern lab"],
+  "homepage":         "http://patternlab.io",
+  "license":          "MIT",
+  "type":             "patternlab-plugin",
+  "authors": [
+    {
+      "name":         "Evan Lovely",
+      "homepage":     "http://evanlovely.com",
+      "role":         "Lead Developer"
+    }
+  ],
+  "support": {
+    "issues":         "https://github.com/evanlovely/plugin-twig-namespaces/issues",
+    "wiki":           "https://evanlovely/plugin-twig-namespaces",
+    "source":         "https://github.com/evanlovely/plugin-twig-namespaces/releases"
+  },
+  "autoload": {
+    "psr-0": {
+      "PatternLab\\TwigNamespaces": "src/"
+    }
+  },
+  "require": {
+    "php":              ">=5.4"
+  },
+  "extra": {
+    "patternlab": {
+      "config": {
+        "plugins": {
+          "twigNamespaces": {
+            "enabled": false,
+            "roots": []
+          }
+        }
+      }
+    }
+  }
+}
