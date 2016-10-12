@@ -33,6 +33,7 @@ class PatternLabListener extends \PatternLab\Listener {
 		$basePath = Config::getOption("baseDir");
 		if ($config["enabled"]) {
 
+			// Pattern Lab approach
 			// Each root has each sub-directory added as namespace in the same way that
 			// Pattern Lab's Twig Engine adds main pattern directories as namespaces
 			// `00-atoms` => `@atoms`
@@ -44,12 +45,15 @@ class PatternLabListener extends \PatternLab\Listener {
 				}
 			}
 
-			// Each value key pair has it's key become the namespace
-			// `foo: ../path/to/bar` => `@foo`
+			// Drupal approach
+			// Each key becomes the namespace for all `paths` inside
+			// Follows data model from Drupal module: https://www.drupal.org/project/components
 			if (array_key_exists("namespaces", $config)) {
 				$loader2 = new Twig_Loader_Filesystem(array());
-				foreach ($config["namespaces"] as $namespace => $path) {
-					$loader2->addPath($basePath . $path, $namespace);
+				foreach ($config["namespaces"] as $namespace => $item) {
+					foreach ($item["paths"] as $path) {
+						$loader2->addPath($basePath . $path, $namespace);
+					}
 				}
 				TwigUtil::addLoader($loader2);
 			}
