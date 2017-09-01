@@ -51,8 +51,8 @@ You could now use this in Twig:
 ```twig
 {% include "@mountains/hood.twig" %}
 {% include "@rivers/sandy.twig" %}
-{@ incdlue "@foo/item1.twig" %}
-{@ incdlue "@foo/item2.twig" %}
+{@ include "@foo/item1.twig" %}
+{@ include "@foo/item2.twig" %}
 ```
 
 You can use either the `roots` or the `namespaces` approach without the other. The `roots` approach is how Pattern Lab registers the namespaces of all folders under `source/_patterns/` like `@atoms` and is therefore useful for including files from other Pattern Labs (watch out for namespace collisions - i.e. you can only have one `@atoms`). And the `namespaces` approach is how the Drupal [Component Libraries](https://www.drupal.org/project/components) module registers Twig namespaces, though it could also be used to register the core modules template files in Pattern Lab so you could `{% extend "@blocks/block.html.twig" %}` if you'd like.
