@@ -6,7 +6,7 @@ This adds namespaces to Twig in Pattern Lab.
 
 ## Installation
 
-To add the Faker Plugin to your project using [Composer](https://getcomposer.org/) type:
+To add this plugin to your project using [Composer](https://getcomposer.org/) type:
 
     composer require evanlovely/plugin-twig-namespaces
 
