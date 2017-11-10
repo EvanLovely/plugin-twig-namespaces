@@ -48,10 +48,8 @@ class PatternLabListener extends \PatternLab\Listener {
 
       $namespacesConfig = [];
       if (array_key_exists("readFromFile", $config)) {
-        print_r('reading from file...');
         $namespacesConfig = TwigTools\Utils::getData($config['readFromFile']);
       } elseif (array_key_exists("namespaces", $config)) {
-        print_r('grabbing from namespaces key in pl config...');
         $namespacesConfig = $config['namespaces'];
       }
       
